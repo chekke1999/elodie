@@ -20,7 +20,7 @@ class Audio(Video):
     __name__ = 'Audio'
 
     #: Valid extensions for audio files.
-    extensions = ('m4a',)
+    extensions = ('m4a','wav')
 
     def __init__(self, source=None):
         super(Audio, self).__init__(source)
