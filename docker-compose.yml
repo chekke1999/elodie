@@ -1,0 +1,18 @@
+version: '3'
+services:
+  elodie:
+    build:
+      context: .
+      dockerfile: Dockerfile.new
+      args:
+        - USER_NAME=${USER_NAME}
+        - UID=${UID}
+        - GID=${GID}
+    user: ${UID}:${GID}
+    container_name: elodie
+    working_dir: /home/${USER_NAME}/elodie
+    volumes:
+      - /etc/group:/etc/group:ro
+      - /etc/passwd:/etc/passwd:ro
+      - ./:/home/${USER_NAME}/elodie
+    tty: true

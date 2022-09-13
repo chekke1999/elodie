@@ -1,0 +1,11 @@
+FROM python:3.10.5-alpine3.16
+ARG USER_NAME
+ARG UID
+ARG GID
+ENV PATH $PATH:/home/${USER_NAME}/.local/bin/
+RUN mkdir /home/${USER_NAME} && chown ${UID}:${GID} /home/${USER_NAME}
+RUN apk update --no-cache
+RUN apk add --no-cache --virtual py-set python3-dev gcc libc-dev 
+RUN apk add --no-cache --virtual Pillow-lib zlib-dev jpeg-dev gcc musl-dev
+RUN apk add --no-cache perl-image-exiftool exiftool 
+RUN pip3 install click send2trash future requests six tabulate
