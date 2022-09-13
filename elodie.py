@@ -367,8 +367,7 @@ main.add_command(_generate_db)
 main.add_command(_verify)
 main.add_command(_batch)
 
-
-if __name__ == '__main__':
+def entrypoint():
     #Initialize ExifTool Subprocess
     exiftool_addedargs = [
        u'-config',
@@ -376,3 +375,7 @@ if __name__ == '__main__':
     ]
     with ExifTool(executable_=get_exiftool(), addedargs=exiftool_addedargs) as et:
         main()
+
+if __name__ == '__main__':
+    entrypoint()
+
