@@ -1,0 +1,22 @@
+# pip3 install ./前に直接elodie.pyを実行
+Usage: elodie.py [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  batch        Run batch() for all plugins.
+  generate-db  Regenerate the hash.json database which contains all of...
+  import       Import files or directories by reading their EXIF and...
+  update       Update a file's EXIF.
+  verify
+
+
+
+# pip3 install ./ したコマンド
+Traceback (most recent call last):
+  File "/home/shoji/.local/bin//elodie", line 5, in <module>
+    from elodie import entrypoint
+  File "/home/shoji/.local/bin/elodie.py", line 14, in <module>
+    from elodie.dependencies import verify_dependencies
+ModuleNotFoundError: No module named 'elodie.dependencies'; 'elodie' is not a package
